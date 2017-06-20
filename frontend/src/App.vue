@@ -1,23 +1,53 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view></router-view>
+    <div id="header">
+      <app-header></app-header>
+    </div>
+    <div id="main">
+      <app-container></app-container>
+    </div>
+    <div id="bottom">
+      <app-bottom></app-bottom>
+    </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app',
-};
+  import appHeader from './components/app-header';
+  import appContainer from './components/app-container';
+  import appBottom from './components/app-bottom';
+
+  export default {
+    name: 'app',
+    components: {
+      appContainer, appBottom, appHeader,
+    },
+  };
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  #app {
+    width: 100vw;
+    height: 100vh;
+    background: url("../static/images/background.jpeg");
+    background-size: 100% 100%;
+    min-height: 720px;
+    min-width: 1080px;
+  }
+
+  #header {
+    width: 100%;
+    height: 48px;
+  }
+
+  #main {
+    width: 100%;
+    height: calc(100% - 92px);
+  }
+
+  #bottom {
+    width: 100%;
+    height: 44px;
+  }
+
 </style>
