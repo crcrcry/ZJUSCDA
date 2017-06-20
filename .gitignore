@@ -58,5 +58,6 @@ typings/
 .env
 
 # others
+dist/
 .DS_Store
 .idea
