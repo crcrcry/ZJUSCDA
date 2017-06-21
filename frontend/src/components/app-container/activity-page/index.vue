@@ -1,13 +1,12 @@
 <template>
   <div id="container">
-    <router-view></router-view>
+
   </div>
 </template>
 
 <script>
-
   export default {
-    name: 'app-container',
+    name: 'activity-page',
   };
 </script>
 

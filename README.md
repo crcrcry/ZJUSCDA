@@ -16,6 +16,7 @@
 - 服务端渲染
 - 异步组件、按需加载、懒加载
 - 后端异步：全部采取 Promise 或者 async / await
+- 后端：RESTful、GraphQL
 - 数据统计可视化：D3.js、Echarts.js...
 - 动画：Canvas、WebGL
 - 本次存储：Localstorage

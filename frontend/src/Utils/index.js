@@ -10,4 +10,14 @@ function getNavName() {
   ];
 }
 
-export default { getNavName };
+function getDepartmentName() {
+  return [
+    { name: '校', id: 'campusRecruitment' },
+    { name: '项', id: 'projectManagement' },
+    { name: '理', id: 'council' },
+    { name: '人', id: 'humanResource' },
+    { name: '公', id: 'publicRelation' },
+  ];
+}
+
+export default { getNavName, getDepartmentName };

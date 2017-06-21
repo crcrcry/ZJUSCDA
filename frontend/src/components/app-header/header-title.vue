@@ -1,6 +1,6 @@
 <template>
   <div id="container">
-    {{ titleValue }}
+    <router-link to="/">{{ titleValue }}</router-link>
   </div>
 </template>
 
@@ -27,5 +27,13 @@
     color: #4D4D4D;
     font: bold 24px/48px "PingFang SC";
     cursor: pointer;
+  }
+
+  a{
+    text-decoration: none;
+  }
+
+  a:visited{
+    color: #4D4D4D;
   }
 </style>

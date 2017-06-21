@@ -1,7 +1,9 @@
 <template>
   <div id="container">
     <div class="sub" v-for="(item, index) in navArr">
-      <nav-button key="item.id" :value="navArr[index].name"></nav-button>
+      <router-link :to="item.id">
+        <nav-button key="item.id" :value="item.name"></nav-button>
+      </router-link>
     </div>
   </div>
 </template>
@@ -33,5 +35,9 @@
 
   .sub{
     float: left;
+  }
+
+  a{
+    text-decoration: none;
   }
 </style>
