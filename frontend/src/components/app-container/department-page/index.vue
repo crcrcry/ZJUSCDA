@@ -17,6 +17,7 @@
         </div>
       </el-col>
     </el-row>
+
     <el-row>
       <div id="nav">
         <router-link v-for="(item, index) in needDepartment" :to="item.path" :key="item.id">
@@ -64,9 +65,9 @@
   }
 
   #main{
-    background-color: #fff;
-    height: 68.4vh;
-    opacity: 0.7;
+    background-color: rgba(255,255,255,0.8);
+    height: 58.4vh;
+    padding: 5vh 2.5%;
   }
 
   i{
@@ -84,17 +85,18 @@
   }
 
   #nav{
-    padding-top: 4.7vh;
+    padding-top: 4vh;
     padding-left: 14.5%;
   }
+
   .round{
     float: left;
     margin-left: 13.6%;
-    width: 44px;
-    height: 44px;
-    border-radius: 25px;
+    width: 6.4vh;
+    height: 6.4vh;
+    border-radius: 3.2vh;
     text-align: center;
-    font: 400 20px/44px "PingFang SC";
+    font: 400 29px/6.4vh "PingFang SC";
     background-color: #26465C;
     cursor: pointer;
   }
@@ -107,5 +109,15 @@
 
   a:visited{
     color: #fff;
+  }
+
+  @media (max-width: 1300px) {
+    #nav{
+      padding-top: 3.5vh;
+    }
+
+    .round{
+      font-size: 23px;
+    }
   }
 </style>

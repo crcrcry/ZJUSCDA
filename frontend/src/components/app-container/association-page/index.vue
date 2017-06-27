@@ -48,7 +48,7 @@
     width: 94%;
     height: 100%;
 
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.8);
   }
 
   #left-container{
@@ -58,7 +58,7 @@
     height: 100%;
 
     overflow: hidden;
-    background-color: rgba(38, 70, 92, 0.7);
+    background-color: rgba(38, 70, 92, 0.75);
   }
 
   .img{
@@ -78,14 +78,24 @@
   #title{
     padding: 5vh 14% 5vh 14%;
     color: #4D4D4D;
-    font: 600 36px/50px "PingFang SC";
+    font: 600 40px/60px "PingFang SC";
   }
 
   .description{
     padding: 0vh 14% 0vh 14%;
 
     color: #4D4D4D;
-    font: 400 20px/32px "PingFang SC";
+    font: 400 22px/36px "PingFang SC";
     text-indent: 2em;
+  }
+
+  @media (max-width: 1300px){
+    #title{
+      font: 600 32px/48px "PingFang SC";
+    }
+
+    .description{
+      font: 400 18px/27px "PingFang SC";
+    }
   }
 </style>

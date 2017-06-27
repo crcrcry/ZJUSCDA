@@ -41,7 +41,7 @@
 
   #main-title-line{
     padding-top: 35vh;
-    font: 500 72px/108px "PingFang SC";
+    font: 500 74px/108px "PingFang SC";
     color: #4D4D4D;
   }
 
@@ -68,5 +68,11 @@
     cursor: pointer;
   }
 
+  @media (max-width: 1380px) {
+    #main-title-line{
+      padding-top: 33vh;
+      font: 500 60px/96px "PingFang SC";
+    }
+  }
 
 </style>

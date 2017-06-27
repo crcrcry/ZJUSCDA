@@ -1,8 +1,8 @@
 <template>
   <div id="container">
-    <div class="sub" v-for="(item, index) in navArr">
-      <router-link :to="item.id">
-        <nav-button key="item.id" :value="item.name"></nav-button>
+    <div class="sub" v-for="(item, index) in navArr" :key="item.id" >
+      <router-link :to="item.path">
+        <nav-button :value="item.name"></nav-button>
       </router-link>
     </div>
   </div>

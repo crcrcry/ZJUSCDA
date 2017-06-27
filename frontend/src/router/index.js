@@ -31,6 +31,10 @@ export default new Router({
       component: departmentPage,
       children: [
         {
+          path: '',
+          component: humanResource,
+        },
+        {
           path: 'humanResource',
           component: humanResource,
         },
