@@ -22,7 +22,7 @@
     name: 'app',
     data() {
       return {
-        ifShowBlackboard: true,
+        ifShowBlackboard: false,
       };
     },
     components: {
