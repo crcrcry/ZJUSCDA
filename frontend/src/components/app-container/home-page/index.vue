@@ -7,23 +7,32 @@
       {{ subTitle }}
     </div>
     <div id="button-line">
-      <div>{{ btn.value }}</div>
+      <div @click="skip">{{ btn.value }}</div>
     </div>
   </div>
 </template>
 
 <script>
+  import '../../../animation.css';
+
   export default {
     name: 'home-page',
-    data() {
-      return {
-        mainTitle: '浙大职协 SCDA',
-        subTitle: 'Your future, we care',
-        btn: {
-          value: '走进 SCDA',
-          href: 'assocation',
-        },
-      };
+    computed: {
+      mainTitle() {
+        return this.$store.state.home.mainTitle;
+      },
+      subTitle() {
+        return this.$store.state.home.subTitle;
+      },
+      btn() {
+        return { ...this.$store.state.home.btn };
+      },
+    },
+    methods: {
+      skip() {
+        const path = this.btn.href;
+        this.$router.push(path);
+      },
     },
   };
 </script>

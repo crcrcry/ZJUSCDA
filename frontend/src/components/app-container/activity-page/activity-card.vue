@@ -1,6 +1,6 @@
 <template>
-  <div id="container">
-    <div id="info">
+  <div id="container" :style="backgroundStyle">
+    <div id="info" @click="openBlackboard">
       <div id="name">{{ name }}</div>
       <div class="button" :class="state?'button-yes':'button-no'">{{ btnValue }}</div>
     </div>
@@ -10,11 +10,6 @@
 <script>
   export default {
     name: 'activity-card',
-    data() {
-      return {
-
-      };
-    },
     props: {
       name: {
         type: String,
@@ -24,14 +19,29 @@
         type: Boolean,
         required: true,
       },
+      background: {
+        type: String,
+        required: true,
+      }
     },
     computed: {
       btnValue() {
         return (this.state ? '报名中' : '未开启');
       },
+      backgroundStyle() {
+        return {
+          background: `url(${this.background})`,
+          backgroundSize: '100% 100%',
+        };
+      },
     },
     methods: {
-
+      openBlackboard() {
+        this.$store.dispatch('switchBlackboard', {
+          value: true,
+          name: this.name,
+        });
+      },
     },
   };
 </script>
@@ -41,9 +51,6 @@
     width: 29.33vw;
     height: 27.5vh;
     margin: 2vh 1.7vw;
-
-    background: url("../../../../static/images/activity/1.jpeg");
-    background-size: 100% 100%;
     position: absolute;
   }
 

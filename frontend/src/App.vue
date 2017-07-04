@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div id="blackboard" @click="switchBlackboard" v-show="ifShowBlackboard"></div>
+    <blackboard></blackboard>
     <div id="header">
       <app-header></app-header>
     </div>
@@ -17,21 +17,12 @@
   import appHeader from './components/app-header';
   import appContainer from './components/app-container';
   import appBottom from './components/app-bottom';
+  import blackboard from './components/blackboard';
 
   export default {
     name: 'app',
-    data() {
-      return {
-        ifShowBlackboard: false,
-      };
-    },
     components: {
-      appContainer, appBottom, appHeader,
-    },
-    methods: {
-      switchBlackboard() {
-        this.ifShowBlackboard = !this.ifShowBlackboard;
-      },
+      appContainer, appBottom, appHeader, blackboard
     },
   };
 </script>
@@ -44,16 +35,6 @@
     background-size: 100% 100%;
     min-height: 720px;
     min-width: 1080px;
-  }
-
-  #blackboard{
-    position: absolute;
-    width: 100vw;
-    height: 100vh;
-
-    background-color: rgba(0, 0, 0, 0.75);
-    z-index: 10;
-    cursor: pointer;
   }
 
   #header {

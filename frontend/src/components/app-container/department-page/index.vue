@@ -3,7 +3,7 @@
     <el-row id="content">
       <el-col :span="2">
         <div class="arrowDiv">
-          <i class="el-icon-arrow-left"></i>
+          <i class="el-icon-arrow-left" @click="changeDepartment(-1)"></i>
         </div>
       </el-col>
       <el-col :span="20">
@@ -13,7 +13,7 @@
       </el-col>
       <el-col :span="2">
         <div class="arrowDiv">
-          <i class="el-icon-arrow-right"></i>
+          <i class="el-icon-arrow-right" @click="changeDepartment(1)"></i>
         </div>
       </el-col>
     </el-row>
@@ -32,6 +32,7 @@
 
 <script>
   import Utils from '../../../Utils';
+  import '../../../animation.css';
 
   export default {
     name: 'department-page',
@@ -49,6 +50,27 @@
           needDepartmentObj[index].path = `/department/${item.id}`;
         });
         return needDepartmentObj;
+      },
+    },
+    methods: {
+      changeDepartment(direction) {
+        const path = this.$route.path === '/department' ? '/department/humanResource' : this.$route.path;
+        let positon;
+        this.needDepartment.find((value, index) => {
+          if(path == value.path) positon = index;
+        });
+        // left
+        if(direction == -1){
+          if(positon > 0){
+            this.$router.push(this.needDepartment[positon-1].path);
+          }
+        }
+        // right
+        else if(direction == 1) {
+          if(positon < 3){
+            this.$router.push(this.needDepartment[positon+1].path);
+          }
+        }
       },
     },
   };

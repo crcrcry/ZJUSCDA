@@ -12,12 +12,24 @@ function getNavName() {
 
 function getDepartmentName() {
   return [
-    { name: '校', id: 'campusRecruitment' },
-    { name: '项', id: 'projectManagement' },
-    { name: '理', id: 'council' },
-    { name: '人', id: 'humanResource' },
-    { name: '公', id: 'publicRelation' },
+    { name: '校', id: 'campusRecruitment', brief: 'cr' },
+    { name: '项', id: 'projectManagement', brief: 'pm' },
+    { name: '理', id: 'council', brief: 'council' },
+    { name: '人', id: 'humanResource', brief: 'hr' },
+    { name: '公', id: 'publicRelation', brief: 'pr' },
   ];
 }
 
-export default { getNavName, getDepartmentName };
+function deepClone(obj) {
+  const newObj = obj.constructor === Array ? [] : {};
+  if(typeof obj !== 'object'){
+    return obj;
+  }else{
+    for(let i in obj){
+      newObj[i] = typeof obj[i] === 'object' ? deepClone(obj[i]) : obj[i];
+    }
+    return newObj;
+  }
+}
+
+export default { getNavName, getDepartmentName, deepClone };

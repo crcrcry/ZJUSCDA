@@ -1,12 +1,14 @@
 <template>
   <div id="container">
     <el-row type="flex" justify="center" align="middle">
-      <el-col v-for="(item, index) in memberInfo" :span="8" :key="index" class="column">
+      <el-col v-for="(item, index) in nowMember" :span="8" :key="item.name" class="column">
         <div class="memberCard">
           <el-row class="image">
-            <div @mouseenter="showText(index)" style="width: 36vh; height: 54vh">
-              <div v-show="item.isTextShow" class="text"@mouseout="hideText(index)">
-                {{ item.text }}
+            <div :style="imgStyle[index]">
+              <div @mouseenter="showText(index)" style="width: 36vh; height: 54vh">
+                <div v-show="item.isTextShow" class="text"@mouseout="hideText(index)">
+                  {{ item.text }}
+                </div>
               </div>
             </div>
           </el-row>
@@ -23,30 +25,37 @@
 <script>
   export default {
     name: 'member',
-    data() {
-      return {
-        memberInfo: [
-          {
-            name: '陈然',
-            brief: '苟利艾斯蒂生死以，岂因学习避趋之。',
-            text: '打造专业、成熟、真诚服务的精英团队，致力于浙大学子的职业规划和发展，依托浙江大学的名牌效应和人才优势，帮助学生树立正确的职业价值观和职业发展观，搭建学校、学生和企业之间的沟通桥梁。',
-            isTextShow: false,
-          },
-          {
-            isTextShow: false,
-          },
-          {
-            isTextShow: false,
-          },
-        ],
-      };
+    props: {
+      offset: {
+        type: Number,
+        required: true,
+      },
+      member: {
+        required: true,
+      },
+    },
+    computed: {
+      nowMember() {
+        const offset = this.offset;
+        return this.member.slice(offset*3, (offset+1)*3);
+      },
+      imgStyle(){
+        const obj = [];
+        for(let i = 0; i < this.nowMember.length; i++){
+          obj.push({
+            background: `url(${this.nowMember[i].img})`,
+            backgroundSize: '100% 100%',
+          });
+        }
+        return obj;
+      },
     },
     methods: {
       showText(id) {
-        this.memberInfo[id].isTextShow = true;
+        this.nowMember[id].isTextShow = true;
       },
       hideText(id) {
-        this.memberInfo[id].isTextShow = false;
+        this.nowMember[id].isTextShow = false;
       },
     },
   };
@@ -74,8 +83,6 @@
   .image{
     width: 36vh;
     height: 54vh;
-    background: url("../../../../static/images/member/council/chenran3.jpg");
-    background-size: 100% 100%;
   }
 
   .simpleIntro{

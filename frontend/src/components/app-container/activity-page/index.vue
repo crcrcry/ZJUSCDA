@@ -15,10 +15,10 @@
 
           <div id="cards-area">
             <div v-for="(item, index) in outerActivity" key="item.name" class="card" :id="item.id" v-show="ifOuterActivity">
-              <activity-card :name="item.name" :state="item.state"></activity-card>
+              <activity-card :name="item.name" :state="item.state" :background="item.cardImgUrl"></activity-card>
             </div>
-            <div v-for="(item, index) in innterActivity" key="item.name" class="card" :id="item.id" v-show="!ifOuterActivity">
-              <activity-card :name="item.name" :state="item.state"></activity-card>
+            <div v-for="(item, index) in innerActivity" key="item.name" class="card" :id="item.id" v-show="!ifOuterActivity">
+              <activity-card :name="item.name" :state="item.state" :background="item.cardImgUrl"></activity-card>
             </div>
           </div>
         </el-row>
@@ -28,30 +28,27 @@
 </template>
 
 <script>
+  import '../../../animation.css';
   import activityCard from './activity-card';
 
   export default {
     name: 'activity-page',
-    data() {
-      return {
-        ifOuterActivity: true,
-        outerActivity: [
-          { id: 'c1', name: '名企之路', state: false },
-          { id: 'c2', name: '职场精英训练营', state: false },
-          { id: 'c3', name: '企业参观', state: true },
-          { id: 'c4', name: '企业招聘专场', state: true },
-        ],
-        innterActivity: [
-          { id: 'c1', name: '管理培训生', state: true },
-          { id: 'c2', name: '素质拓展', state: false },
-          { id: 'c3', name: '周年庆', state: false },
-          { id: 'c4', name: '跨年日租别墅趴', state: false },
-        ],
-      };
+    computed: {
+      ifOuterActivity() {
+        return this.$store.state.activity.ifOuterActivity;
+      },
+      outerActivity() {
+        return this.$store.state.activity.outerActivity;
+      },
+      innerActivity() {
+        return this.$store.state.activity.innerActivity;
+      },
     },
     methods: {
       changeActivity(boolVal) {
-        this.ifOuterActivity = boolVal;
+        this.$store.dispatch('activity/changeActivityType', {
+          ifOuterActivity: boolVal,
+        })
       },
     },
     components: {

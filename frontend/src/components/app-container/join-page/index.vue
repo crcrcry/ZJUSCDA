@@ -1,7 +1,7 @@
 <template>
   <div id="container">
     <div id="board">
-      <form-board></form-board>
+      <form-board :ifStart="ifStartJoin"></form-board>
     </div>
   </div>
 </template>
@@ -11,8 +11,19 @@
 
   export default {
     name: 'join-page',
+    computed: {
+      ifStartJoin() {
+        return this.$store.state.join.ifStartJoin;
+      }
+    },
     components: {
       formBoard,
+    },
+    methods: {
+
+    },
+    mounted() {
+      this.$notify.info({...this.$store.state.join.joinInfo});
     },
   };
 </script>

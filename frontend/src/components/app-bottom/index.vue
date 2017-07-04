@@ -12,11 +12,13 @@
 <script>
   export default {
     name: 'app-bottom',
-    data() {
-      return {
-        copyright: 'Copyright@2003-2017 ZJUSCDA. All rights reserved.',
-        contact: '联系我们：87952717 微信公众号：scda_zju',
-      };
+    computed: {
+      copyright() {
+        return this.$store.state.copyright;
+      },
+      contact() {
+        return this.$store.state.contact;
+      }
     },
   };
 </script>

@@ -3,18 +3,18 @@
     <el-row id="content">
       <el-col :span="2">
         <div class="arrowDiv">
-          <i class="el-icon-caret-left"></i>
+          <i class="el-icon-caret-left" @click="changeOffset(-1)"></i>
         </div>
       </el-col>
       <el-col :span="20">
         <div id="main">
-          <member></member>
+          <member :offset="offset" :member="member"></member>
         </div>
       </el-col>
       <el-col :span="2">
         <div class="arrowDiv">
           <div class="arrowRound">
-            <i class="el-icon-caret-right"></i>
+            <i class="el-icon-caret-right" @click="changeOffset(1)"></i>
           </div>
         </div>
       </el-col>
@@ -23,7 +23,7 @@
     <el-row>
       <div id="nav">
         <div v-for="(item, index) in department" :key="item.id">
-          <div class="round" :style="navOpacity[index]">
+          <div class="round" :style="navOpacity[index]" @click="changeDepartment(item.brief)">
             {{ item.name }}
           </div>
         </div>
@@ -44,8 +44,26 @@
         navOpacity: ['opacity: 0.8', 'opacity: 0.6', 'opacity: 0.6', 'opacity: 0.8', 'opacity: 0.6'],
       };
     },
+    computed: {
+      offset() {
+        return this.$store.state.member.offset;
+      },
+      member() {
+        const department = this.$store.state.member.department;
+        return this.$store.state.member.members[department];
+      },
+    },
     methods: {
-
+      changeDepartment(department) {
+        this.$store.dispatch('member/changeDepartment', {
+          department: department,
+        });
+      },
+      changeOffset(direction){
+        this.$store.dispatch('member/changeOffset', {
+          direction: direction,
+        });
+      }
     },
     components: {
       member,

@@ -10,90 +10,89 @@
           <el-col :span="8">
             <el-row class="form-item">
               <span class="form-word">姓名: </span>
-              <input type="text" style="width: 9.2vw">
+              <input type="text" v-model="form.name" style="width: 9.2vw">
               <hr class="left-hr">
             </el-row>
             <el-row class="form-item">
               <span class="form-word">学号: </span>
-              <input type="text" style="width: 9.2vw">
+              <input type="text" v-model="form.id" style="width: 9.2vw">
               <hr class="left-hr">
             </el-row>
             <el-row class="form-item">
               <span class="form-word">校区: </span>
-              <input type="text" style="width: 9.2vw">
+              <input type="text" v-model="form.campus" style="width: 9.2vw">
               <hr class="left-hr">
             </el-row>
             <el-row class="form-item">
               <span class="form-word">推荐人: </span>
-              <input type="text" style="width: 7.5vw">
+              <input type="text" v-model="form.referee" style="width: 7.5vw">
               <hr class="left-hr">
             </el-row>
             <el-row class="form-item">
               <span class="form-word">是否服从调剂: </span>
-              <input type="text" style="width: 2vw">
+              <input type="text" v-model="form.ifAdjust" style="width: 2vw">
               <hr class="left-hr">
             </el-row>
           </el-col>
           <el-col :span="13" :offset="2">
             <el-row class="form-item">
               <span class="form-word">专业: </span>
-              <input type="text" style="width: 7.4vw">
+              <input type="text" v-model="form.major" style="width: 7.4vw">
               <span class="form-word">&nbsp;年级: </span>
-              <input type="text" style="width: 4.5vw">
+              <input type="text" v-model="form.grade" style="width: 4.5vw">
               <hr>
             </el-row>
             <el-row class="form-item">
               <span class="form-word">长号: </span>
-              <input type="text" style="width: 7.4vw">
+              <input type="text" v-model="form.longTel" style="width: 7.4vw">
               <span class="form-word">&nbsp;短号: </span>
-              <input type="text" style="width: 4.5vw">
+              <input type="text" v-model="form.shortTel" style="width: 4.5vw">
               <hr>
             </el-row>
             <el-row class="form-item">
               <span class="form-word">邮箱: </span>
-              <input type="text" style="width: 17vw">
+              <input type="text" v-model="form.email" style="width: 17vw">
               <hr>
             </el-row>
             <el-row class="form-item">
               <span class="form-word">第一志愿: </span>
-              <input type="text" style="width: 14vw">
+              <input type="text" v-model="form.first" style="width: 14vw">
               <hr>
             </el-row>
             <el-row class="form-item">
               <span class="form-word">第二志愿: </span>
-              <input type="text" style="width: 14vw">
+              <input type="text" v-model="form.second" style="width: 14vw">
               <hr>
             </el-row>
           </el-col>
         </el-row>
         <el-row class="form-item">
-          <span class="form-word question">问题一: 爱好、特长及技能</span>
-          <textarea style="width: 41vw;"></textarea>
+          <span class="form-word question">{{ formInfo.q1 }}</span>
+          <textarea v-model="form.q1" style="width: 41vw;"></textarea>
         </el-row>
       </el-col>
 
       <el-col :span="12" id="right-form">
         <el-row class="form-item">
-          <span class="form-word question">问题二: 对所报部门的理解及您的优势</span>
-          <textarea style="width: 39vw;"></textarea>
+          <span class="form-word question">{{ formInfo.q2}}</span>
+          <textarea v-model="form.q2" style="width: 39vw;"></textarea>
         </el-row>
         <el-row class="form-item">
           <el-row class="form-item">
             <span class="form-word">面试时间选择: </span>
-            <input type="text" style="width: 10.2vw">
+            <input type="text" v-model="form.time" style="width: 10.2vw">
             <el-row id="time-pick">
               <el-col :span="7">
-                <span class="time-item">A 9月1号 下午</span>
-                <span class="time-item">B 9月1号 晚上</span>
-
+                <span class="time-item">{{ formInfo.time[0] }}</span>
+                <span class="time-item">{{ formInfo.time[1] }}</span>
               </el-col>
               <el-col :span="7" :offset="1">
-                <span class="time-item">C 9月2号下午</span>
-                <span class="time-item">D 9月2号晚上</span>
+                <span class="time-item">{{ formInfo.time[2] }}</span>
+                <span class="time-item">{{ formInfo.time[3] }}</span>
               </el-col>
               <el-col :span="7" :offset="1">
-                <span class="time-item">E 9月3号下午</span>
-                <span class="time-item">F 9月3号晚上</span>
+                <span class="time-item">{{ formInfo.time[4] }}</span>
+                <span class="time-item">{{ formInfo.time[5] }}</span>
               </el-col>
             </el-row>
           </el-row>
@@ -103,12 +102,12 @@
           <el-col :span="13" id="file-name">{{ form.fileName }}</el-col>
           <el-col :span="5" id="file">
             选择文件
-            <input type="file" name="" @change="changeFile($event)">
+            <input type="file" @change="changeFile($event)">
           </el-col>
         </el-row>
         <el-row class="form-item">
-          <el-col :span="5" :offset="12" class="button">重置</el-col>
-          <el-col :span="5" :offset="2" class="button">提交</el-col>
+          <el-col :span="5" :offset="12" class="button"><div @click="resetForm">重置</div></el-col>
+          <el-col :span="5" :offset="2" class="button"><div @click="submitForm">提交</div></el-col>
         </el-row>
       </el-col>
     </el-row>
@@ -122,9 +121,35 @@
       return {
         form: {
           name: '',
+          major: '',
+          grade: '',
+          id: '',
+          longTel: '',
+          shortTel: '',
+          campus: '',
+          email: '',
+          referee: '',
+          ifAdjust: '',
+          first: '',
+          second: '',
+          q1: '',
+          q2: '',
+          time: '',
+          file: '',
           fileName: '尚未选择简历文件',
-        },
+        }
       };
+    },
+    computed: {
+      formInfo() {
+        return { ...this.$store.state.join.formInfo }
+      },
+    },
+    props: {
+      ifStart: {
+        type: Boolean,
+        required: true,
+      }
     },
     methods: {
       changeFile(event) {
@@ -135,6 +160,33 @@
           this.form.fileName = nowFileName.substring(12);
         }
       },
+
+      resetForm() {
+        for(let item in this.form){
+          if(item === 'fileName'){
+            this.form[item] = '尚未选择简历文件';
+          }else{
+            this.form[item] = '';
+          }
+        }
+      },
+
+      submitForm() {
+//        console.log(this.form);
+      }
+    },
+
+    mounted() {
+      if(!this.ifStart){
+        const inputArr = document.getElementsByTagName('input');
+        const textArr = document.getElementsByTagName('textarea');
+        for(let item of inputArr){
+          item.disabled = 'disabled';
+        }
+        for(let item of textArr){
+          item.disabled = 'disabled';
+        }
+      }
     },
   };
 </script>
@@ -219,6 +271,7 @@
     background-color: rgba(77, 77, 77, 0.8);
     font: 400 24px/55px 'PingFang SC';
     color: #fff;
+    cursor: pointer;
   }
 
   input[type="text"]{
