@@ -17,6 +17,7 @@
 - 后端API：RESTful、GraphQL
 - 动画：Canvas、WebGL
 - 数据统计可视化：D3.js、Echarts.js...
+- 性能问题，主要是图片资源大小
 
 ### level 2
 - vue-cli 构建：build 原理

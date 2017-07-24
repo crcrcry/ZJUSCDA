@@ -6,8 +6,7 @@
           <el-row class="image">
             <div :style="imgStyle[index]">
               <div @mouseenter="showText(index)" style="width: 36vh; height: 54vh">
-                <div v-show="item.isTextShow" class="text"@mouseout="hideText(index)">
-                  {{ item.text }}
+                <div v-show="item.isTextShow" class="text"@mouseout="hideText(index)" v-html="item.text">
                 </div>
               </div>
             </div>
@@ -96,18 +95,18 @@
   }
 
   .brief{
-    font: 100 22px/26px "PingFang SC";
+    font: 100 21px/25px "PingFang SC";
     color: rgb(208, 208, 208);
   }
 
   .text{
     width: 80%;
-    height: 60%;
-    padding: 30% 10%;
+    height: 80%;
+    padding: 20% 10% 10% 10%;
 
     background-color: #000;
     opacity: 0.8;
-    font: 100 22px/30px "PingFang SC";
+    font: 100 21px/29px "PingFang SC";
     color: rgb(208, 208, 208);
   }
 
@@ -139,7 +138,7 @@
     }
 
     .brief{
-      font: 100 18px/22px "PingFang SC";
+      font: 100 17px/21px "PingFang SC";
       color: rgb(208, 208, 208);
     }
   }

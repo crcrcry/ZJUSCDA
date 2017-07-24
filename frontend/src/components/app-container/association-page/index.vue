@@ -62,15 +62,15 @@
   }
 
   #img-column{
-    margin-top: 0px;
-    transition: margin-top 8s;
+    margin-top: -30px;
+    transition: margin-top 10s linear;
   }
   #img-column:hover{
-    margin-top: -55vh;
+    margin-top: -200vh;
   }
 
   .img{
-    height: 44vh;
+    height: 70vh;
     width: 91.3%;
     margin-left: 4.3%;
     margin-top: 30px;
@@ -93,7 +93,7 @@
     padding: 0vh 14% 0vh 14%;
 
     color: #4D4D4D;
-    font: 400 22px/36px "PingFang SC";
+    font: 400 18px/28px "PingFang SC";
     text-indent: 2em;
   }
 
@@ -103,7 +103,7 @@
     }
 
     .description{
-      font: 400 18px/27px "PingFang SC";
+      font: 400 15px/21px "PingFang SC";
     }
   }
 </style>

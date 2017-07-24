@@ -88,8 +88,8 @@
 
   #main{
     background-color: rgba(255,255,255,0.8);
-    height: 58.4vh;
-    padding: 5vh 2.5%;
+    height: 63vh;
+    padding: 2.7vh 2.5%;
   }
 
   i{
