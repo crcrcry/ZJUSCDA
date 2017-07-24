@@ -4,7 +4,7 @@
       {{ copyright }}
     </div>
     <div id="right-container" class="text">
-      {{ contact }}
+      <span @click="show">{{ contact }}</span>
     </div>
   </div>
 </template>
@@ -20,6 +20,11 @@
         return this.$store.state.contact;
       }
     },
+    methods: {
+      show(){
+        this.$notify.info({...this.$store.state.usInfo});
+      }
+    }
   };
 </script>
 
@@ -49,5 +54,9 @@
   .text{
     font: bold 18px/44px "PingFang SC";
     color: #4D4D4D;
+  }
+
+  span{
+    cursor: pointer;
   }
 </style>

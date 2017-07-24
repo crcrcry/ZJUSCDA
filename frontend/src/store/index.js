@@ -12,8 +12,13 @@ Vue.use(Vuex);
 const state = {
   ifShowBlackboard: false,
   blackboardName: '',
-  copyright: 'Copyright@2003-2017 ZJUSCDA. All rights reserved.',
-  contact: '联系我们：87952717 微信公众号：scda_zju',
+  copyright: 'Copyright@2017 ZJUSCDA. All rights reserved. ',
+  contact: '浙ICP备17028775号-2 联系我们',
+  usInfo: {
+    title: '浙大职协SCDA',
+    message: '联系电话：178-1686-1213（会长） 联系电话：188-6818-6398（会助）   联系电话：131-0772-0201（网站负责人） 微信公众号：scda_zju ',
+    duration: 5000, // 提示的持续事件，单位ms
+  },
 };
 
 const getters = {
