@@ -12,14 +12,9 @@
 - 框架：Express.js / Koa.js
 - 数据库：Mysql
 
-## 相比 1.0 想要增加的点
-### level 1
-- 后端API：RESTful、GraphQL
+## todolist
 - 动画：Canvas、WebGL
-- 数据统计可视化：D3.js、Echarts.js...
-- 性能问题，主要是图片资源大小
+- 性能问题
+	- 利用 cdn 加速大概能加速 2——3 倍，还是不够理想
+	- 主要是图片资源大小，还是要裁剪
 
-### level 2
-- vue-cli 构建：build 原理
-- 服务端渲染：考虑到服务器带宽问题，不做可能效果更好。并且 vue-cli build 以后得到的就是服务端渲染代码。
-- 异步组件、按需加载、懒加载
