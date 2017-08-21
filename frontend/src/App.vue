@@ -31,7 +31,7 @@
   #app {
     width: 100vw;
     height: 100vh;
-    background: url("../static/images/background.jpeg");
+    background: url("http://static.zjuscda.club/images/background.jpeg");
     background-size: 100% 100%;
     min-height: 720px;
     min-width: 1080px;

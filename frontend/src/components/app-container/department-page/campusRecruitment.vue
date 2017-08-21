@@ -109,8 +109,8 @@
     }
 
     #ename{
-      font: 300 36px/54px "PingFang SC";
-      letter-spacing: 4.2px;
+      font: 300 35px/54px "PingFang SC";
+      letter-spacing: 3.6px;
     }
 
     .paragraph{

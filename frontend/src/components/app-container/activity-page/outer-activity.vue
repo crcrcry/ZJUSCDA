@@ -9,7 +9,7 @@
 
 <script>
   export default {
-    name: 'activity-card',
+    name: 'outer-activity',
     props: {
       name: {
         type: String,

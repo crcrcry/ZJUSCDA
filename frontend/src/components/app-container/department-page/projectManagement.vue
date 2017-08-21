@@ -67,7 +67,7 @@
     font: 300 40px/54px "PingFang SC";
     color: #4D4D4D;
     text-align: left;
-    letter-spacing: 5px;
+    letter-spacing: 3.7px;
   }
 
   .paragraph{
@@ -111,8 +111,8 @@
     }
 
     #ename{
-      font: 300 36px/54px "PingFang SC";
-      letter-spacing: 4.2px;
+      font: 300 34px/54px "PingFang SC";
+      letter-spacing: 3px;
     }
 
     .paragraph{

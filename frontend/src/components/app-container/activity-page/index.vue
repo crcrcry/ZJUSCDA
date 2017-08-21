@@ -15,10 +15,10 @@
 
           <div id="cards-area">
             <div v-for="(item, index) in outerActivity" key="item.name" class="card" :id="item.id" v-show="ifOuterActivity">
-              <activity-card :name="item.name" :state="item.state" :background="item.cardImgUrl"></activity-card>
+              <outer-activity :name="item.name" :state="item.state" :background="item.cardImgUrl"></outer-activity>
             </div>
-            <div v-for="(item, index) in innerActivity" key="item.name" class="card" :id="item.id" v-show="!ifOuterActivity">
-              <activity-card :name="item.name" :state="item.state" :background="item.cardImgUrl"></activity-card>
+            <div v-show="!ifOuterActivity">
+              <inner-activity></inner-activity>
             </div>
           </div>
         </el-row>
@@ -29,7 +29,8 @@
 
 <script>
   import '../../../animation.css';
-  import activityCard from './activity-card';
+  import outerActivity from './outer-activity';
+  import innerActivity from './inner-activity';
 
   export default {
     name: 'activity-page',
@@ -40,9 +41,6 @@
       outerActivity() {
         return this.$store.state.activity.outerActivity;
       },
-      innerActivity() {
-        return this.$store.state.activity.innerActivity;
-      },
     },
     methods: {
       changeActivity(boolVal) {
@@ -52,7 +50,7 @@
       },
     },
     components: {
-      activityCard,
+      outerActivity, innerActivity,
     },
   };
 </script>

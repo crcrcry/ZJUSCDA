@@ -1,5 +1,5 @@
 
-const imageDir = '../../../../static/images/member/';
+const imageDir = 'http://static.zjuscda.club/images/member/';
 
 const state = {
   department: 'council',
@@ -256,13 +256,6 @@ const state = {
         text: '在这里的时间总是惊喜。在八舍的走廊全家的门口西湖的岸边夜聊；在永谦的小房间开会学习回忆过童年也期盼过未来；在数不清的以SCDA开头的群聊里互相调侃偷偷计划；在这里重新找到家的感觉。来到这里之前，我只是觉得披上正装的SCDAers精致能干；来到这里之后，更多时候的SCDAers热情有趣。所以我选择留下，也期待你到来。',
         isTextShow: false,
         img: imageDir + 'humanResource/meizi.jpg',
-      },
-      {
-        name: '杨璐敏',
-        brief: '来SCDA一起浪咯～',
-        text: '在这里你能遇见各色各样的人，与他们结识共事，感受思维和人格魅力的碰撞。你在部门、mentor、管培小组不同的小圈子里有机会接触到几乎协会里的所有人，你们一起拍微电影，一起玩国王天使，一起举办协会活动。只要你愿意，你会在协会里收获充实的时光！',
-        isTextShow: false,
-        img: imageDir + 'humanResource/.jpg',
       },
       // {
       //   name: '陈然',
