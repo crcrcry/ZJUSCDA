@@ -102,12 +102,12 @@
           <el-col :span="13" id="file-name">{{ form.fileName }}</el-col>
           <el-col :span="5" id="file">
             选择文件
-            <input type="file" @change="changeFile($event)">
+            <input type="file" @change="changeFile($event)" id="resume">
           </el-col>
         </el-row>
         <el-row class="form-item">
           <el-col :span="5" :offset="12" class="button"><div @click="resetForm">重置</div></el-col>
-          <el-col :span="5" :offset="2" class="button"><div @click="submitForm">提交</div></el-col>
+          <el-col :span="5" :offset="2" class="button"><div @click="submitForm" v-loading.fullscreen.lock="loading">提交</div></el-col>
         </el-row>
       </el-col>
     </el-row>
@@ -135,9 +135,10 @@
           q1: '',
           q2: '',
           time: '',
-          file: '',
+          ifFile: false,
           fileName: '尚未选择简历文件',
-        }
+        },
+        loading: false,
       };
     },
     computed: {
@@ -155,8 +156,10 @@
       changeFile(event) {
         const nowFileName = event.target.value;
         if (nowFileName === '') {
+          this.form.ifFile = false;
           this.form.fileName = '请选择您的简历文件';
         } else {
+          this.form.ifFile = true;
           this.form.fileName = nowFileName.substring(12);
         }
       },
@@ -172,7 +175,73 @@
       },
 
       submitForm() {
-//        console.log(this.form);
+        if(!this.form.ifFile){
+          this.$message({
+            message: '尚未选择要上传的个人简历！',
+            type: 'warning'
+          });
+          return ;
+        }
+
+        // 思路：通过 FormData 手动添加元素并上传
+        var form = new FormData();
+
+        for(const key in this.form){
+          form.append(key, this.form[key]);
+        }
+
+        const file = document.getElementById('resume');
+        const maxFileSize = 1024 * 1024 * 10;  // 10 mb 文件够用了吧
+        if(file.files[0].size > maxFileSize){
+          this.$message({
+            message: '简历文件大小不应超过 10 MB！',
+            type: 'warning',
+          });
+          return ;
+        }
+        form.append("resume", file.files[0]);
+
+        const req = new Request('http://localhost:3000/join', {
+          method: "POST",
+          body: form,
+        });
+
+        // 上传加载函数
+        this.openFullScreen();
+
+        // ajax
+        fetch(req)
+          .then(res => {
+            this.loading = false
+            return res.json();
+          })
+          .then(data => {
+            if(data.code === 1){
+              this.$message({
+                message: data.msg,
+                type: 'success',
+                duration: 5000,
+              });
+            }else{
+              this.$message({
+                message: data.msg,
+                type: 'error',
+                duration: 5000,
+              });
+            }
+          })
+          .catch(err => {
+            this.$message({
+              message: err,
+              type: 'error',
+              duration: 5000,
+            });
+          })
+        this.resetForm();
+      },
+
+      openFullScreen() {
+        this.loading = true;
       }
     },
 
