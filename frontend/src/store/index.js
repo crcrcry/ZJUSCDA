@@ -16,8 +16,8 @@ const state = {
   contact: '浙ICP备17028775号-2 联系我们',
   usInfo: {
     title: '浙大职协SCDA',
-    message: '联系电话：178-1686-1213（会长） 联系电话：188-6818-6398（会助）   联系电话：131-0772-0201（网站负责人） 微信公众号：scda_zju ',
-    duration: 5000, // 提示的持续事件，单位ms
+    message: '协会邮箱：xxx@zju.edu.cn（有合作意向可戳）\n纳新负责人邮箱：xxx@zju.edu.cn（对纳新有疑问可戳）\n网站联系邮箱：crcrcry@zju.edu.cn（报名过程中出现问题可戳）\n微信公众号：scda_zju ',
+    duration: 7000, // 提示的持续事件，单位ms
   },
 };
 

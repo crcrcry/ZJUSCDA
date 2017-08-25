@@ -22,7 +22,8 @@
     },
     methods: {
       show(){
-        this.$notify.info({...this.$store.state.usInfo});
+        alert(this.$store.state.usInfo.message);
+//        this.$notify.info({...this.$store.state.usInfo}); 换行不方便不好用
       }
     }
   };

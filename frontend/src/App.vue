@@ -24,6 +24,12 @@
     components: {
       appContainer, appBottom, appHeader, blackboard
     },
+    beforeMount() {
+      const width = document.body.clientWidth;
+      if(width < 1110){
+        alert('您好，您的屏幕页面宽度过低，不利于您获得最佳的访问体验。\n建议您在宽度大于1200的页面中访问我们的网站。');
+      }
+    },
   };
 </script>
 

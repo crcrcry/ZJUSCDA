@@ -3,7 +3,7 @@
     <el-row id="content">
       <el-col :span="2">
         <div class="arrowDiv">
-          <i class="el-icon-caret-left" @click="changeOffset(-1)"></i>
+          <i class="el-icon-arrow-left" @click="changeOffset(-1)"></i>
         </div>
       </el-col>
       <el-col :span="20">
@@ -14,7 +14,7 @@
       <el-col :span="2">
         <div class="arrowDiv">
           <div class="arrowRound">
-            <i class="el-icon-caret-right" @click="changeOffset(1)"></i>
+            <i class="el-icon-arrow-right" @click="changeOffset(1)"></i>
           </div>
         </div>
       </el-col>
