@@ -85,7 +85,7 @@
   }
 
   .simpleIntro{
-    padding: 1.3vh 2vh;
+    padding: 0.8vh 2vh;
   }
 
   .name{
@@ -95,50 +95,53 @@
   }
 
   .brief{
-    font: 100 21px/25px "PingFang SC";
+    font: 100 21px/26px "PingFang SC";
     color: rgb(208, 208, 208);
   }
 
   .text{
     width: 80%;
-    height: 80%;
-    padding: 20% 10% 10% 10%;
+    height: 83%;
+    padding: 17% 10% 10% 10%;
 
     background-color: #000;
     opacity: 0.8;
-    font: 100 21px/29px "PingFang SC";
+    font: 100 22px/26px "PingFang SC";
     color: rgb(208, 208, 208);
   }
 
-  /* 文本好像不够美，怎么改个更好看的呢 */
-  /*.text2{*/
-    /*margin: 3% 3%;*/
-    /*width: 74%;*/
-    /*height: 56%;*/
-    /*padding: 30% 10%;*/
+  @media(max-width: 1700px) and (min-width: 1381px){
+    .name{
+      font: 400 25px/25px "PingFang SC";
+    }
 
-    /*background-color: #000;*/
-    /*opacity: 0.8;*/
-    /*font: 100 21px/26px "PingFang SC";*/
-    /*color: rgb(208, 208, 208);*/
-  /*}*/
+    .brief{
+      font: 100 17px/20px "PingFang SC";
+    }
+
+    .text{
+      height: 84%;
+      padding: 16% 10% 10% 10%;
+
+      font: 100 17px/22px "PingFang SC";
+      color: rgb(208, 208, 208);
+    }
+  }
 
   @media (max-width: 1380px) {
     .text{
-      font: 100 18px/24px "PingFang SC";
+      padding: 15% 10% 10% 10%;
+      height: 85%;
+      font: 100 14px/18px "PingFang SC";
     }
 
-    /*.text2{*/
-      /*font: 100 16px/22px "PingFang SC";*/
-    /*}*/
-
     .name{
-      font: 400 24px/28px "PingFang SC";
+      font: 400 22px/24px "PingFang SC";
       color: rgb(216, 216, 216);
     }
 
     .brief{
-      font: 100 17px/21px "PingFang SC";
+      font: 100 14px/18px "PingFang SC";
       color: rgb(208, 208, 208);
     }
   }

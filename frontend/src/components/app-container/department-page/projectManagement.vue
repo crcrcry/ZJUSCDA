@@ -55,8 +55,8 @@
 
   #name{
     padding-left: 3vw;
-    padding-top: 2.2vh;
-    font: 500 72px/90px "PingFang SC";
+    padding-top: 1.7vh;
+    font: 500 72px/78px "PingFang SC";
     color: #4D4D4D;
     text-align: left;
     letter-spacing: 22px;
@@ -64,7 +64,7 @@
 
   #ename{
     padding-left: 3vw;
-    font: 300 40px/54px "PingFang SC";
+    font: 300 40px/50px "PingFang SC";
     color: #4D4D4D;
     text-align: left;
     letter-spacing: 3.7px;
@@ -87,36 +87,36 @@
 
   @media (max-width: 1420px) {
     #name{
-      padding-top: 2.1vh;
-      font: 500 56px/70px "PingFang SC";
+      padding-top: 2vh;
+      font: 500 50px/55px "PingFang SC";
       letter-spacing: 9px;
     }
 
     #ename{
-      font: 300 30px/42px "PingFang SC";
-      letter-spacing: 2.4px;
+      font: 300 30px/40px "PingFang SC";
+      letter-spacing: 2px;
     }
 
     .paragraph{
-      font: 300 19px/24px "PingFang SC";
+      font: 300 17.5px/21.5px "PingFang SC";
       text-indent: 2em;
     }
   }
 
   @media (max-width: 1700px) and (min-width: 1421px) {
     #name{
-      padding-top: 2.2vh;
-      font: 500 72px/90px "PingFang SC";
+      padding-top: 2vh;
+      font: 500 60px/65px "PingFang SC";
       letter-spacing: 13px;
     }
 
     #ename{
-      font: 300 34px/54px "PingFang SC";
-      letter-spacing: 3px;
+      font: 300 34px/50px "PingFang SC";
+      letter-spacing: 2.7px;
     }
 
     .paragraph{
-      font: 300 24px/32px "PingFang SC";
+      font: 300 22px/28px "PingFang SC";
       text-indent: 2em;
     }
   }

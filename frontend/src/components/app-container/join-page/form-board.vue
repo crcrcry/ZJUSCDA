@@ -283,7 +283,7 @@
   }
 
   .form-item{
-    margin-bottom: 3vh;
+    margin-bottom: 2.4vh;
   }
 
   .form-word{
@@ -352,7 +352,7 @@
   }
 
   textarea{
-    height: 18vh;
+    height: 18.5vh;
     border-radius: 5px;
     background-color: rgba(216, 216, 216, 0.5);
     box-shadow: 1px 1px 1px 1px #D1CDCD;
@@ -367,17 +367,44 @@
     box-shadow: 1px 1px 2px 2px rgba(203, 200, 200, 50);
   }
 
+  @media (min-width: 1381px) and (max-width: 1700px) {
+    .form-word{
+      font: 500 19px/24px "PingFang SC";
+    }
+
+    .time-item{
+      font: 400 19px/24px "PingFang SC";
+    }
+
+    #file{
+      font: 400 19px/28px "PingFang SC";
+    }
+
+    #file-name{
+      font: 400 20px/28px "PingFang SC";
+    }
+
+    input[type="text"]{
+      font: 400 19px/24px "PingFang SC";
+    }
+
+    textarea{
+      font: 400 18px/24px "PingFang SC";
+      height: 16.7vh;
+    }
+  }
+
   @media (max-width: 1380px) {
     #title{
       font: 500 36px/49px "Avenir";
     }
 
     .form-word{
-      font: 500 20px/28px "PingFang SC";
+      font: 500 18px/24px "PingFang SC";
     }
 
     .time-item{
-      font: 400 20px/28px "PingFang SC";
+      font: 400 18px/24px "PingFang SC";
     }
 
     #file{
@@ -395,12 +422,12 @@
     }
 
     input[type="text"]{
-      font: 400 20px/28px "PingFang SC";
+      font: 400 18px/24px "PingFang SC";
     }
 
     textarea{
-      font: 400 20px/28px "PingFang SC";
-      height: 15vh;
+      font: 400 18px/24px "PingFang SC";
+      height: 13vh;
     }
   }
 </style>

@@ -86,32 +86,32 @@
 
   @media (max-width: 1420px) {
     #name{
-      padding-top: 2.1vh;
-      font: 500 56px/70px "PingFang SC";
+      padding-top: 2vh;
+      font: 500 50px/60px "PingFang SC";
       letter-spacing: 9px;
     }
 
     #ename{
-      font: 300 30px/42px "PingFang SC";
-      letter-spacing: 2.4px;
+      font: 300 30px/40px "PingFang SC";
+      letter-spacing: 3.2px;
     }
 
     .paragraph{
-      font: 300 19px/24px "PingFang SC";
+      font: 300 18px/24px "PingFang SC";
       text-indent: 2em;
     }
   }
 
   @media (max-width: 1700px) and (min-width: 1421px) {
     #name{
-      padding-top: 2.2vh;
-      font: 500 72px/90px "PingFang SC";
+      padding-top: 2vh;
+      font: 500 70px/80px "PingFang SC";
       letter-spacing: 13px;
     }
 
     #ename{
-      font: 300 36px/54px "PingFang SC";
-      letter-spacing: 4.2px;
+      font: 300 34px/50px "PingFang SC";
+      letter-spacing: 6px;
     }
 
     .paragraph{

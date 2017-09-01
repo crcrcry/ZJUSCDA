@@ -83,13 +83,13 @@
   }
 
   #content{
-    padding-top: 7.6vh;
+    padding-top: 7.2vh;
   }
 
   #main{
     background-color: rgba(255,255,255,0.8);
-    height: 63vh;
-    padding: 2.7vh 2.5%;
+    height: 61.5vh;
+    padding: 2.5vh 2.5%;
   }
 
   i{

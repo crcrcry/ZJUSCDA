@@ -39,7 +39,7 @@
     height: 100vh;
     background: url("http://static.zjuscda.club/images/background.jpeg");
     background-size: 100% 100%;
-    min-height: 720px;
+    min-height: 560px;
     min-width: 1080px;
   }
 

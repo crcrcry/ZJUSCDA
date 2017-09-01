@@ -49,7 +49,7 @@
   }
 
   #main-title-line{
-    padding-top: 35vh;
+    padding-top: 34vh;
     font: 500 74px/108px "PingFang SC";
     color: #4D4D4D;
   }
@@ -79,7 +79,7 @@
 
   @media (max-width: 1380px) {
     #main-title-line{
-      padding-top: 33vh;
+      padding-top: 31vh;
       font: 500 60px/96px "PingFang SC";
     }
   }

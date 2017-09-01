@@ -89,13 +89,14 @@
   }
 
   #nav-top{
-    padding-top: 8vh;
+    padding-top: 3vh;
+    padding-bottom: 4.8vh;
     height: 25vh;
     border-bottom: 2px solid #979797;
   }
 
   #nav-bottom{
-    padding-top: 5vh;
+    padding-top: 3.8vh;
     height: 28vh;
     border-top: 2px solid #979797;
   }
