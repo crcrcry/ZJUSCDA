@@ -79,8 +79,9 @@
         </el-row>
         <el-row class="form-item">
           <el-row class="form-item">
-            <span class="form-word">面试时间选择: </span>
+            <span class="form-word">面试时间: </span>
             <input type="text" v-model="form.time" style="width: 10.2vw">
+            <hr style="width: 200px; margin-left: 5.3vw">
             <el-row id="time-pick">
               <el-col :span="7">
                 <span class="time-item">{{ formInfo.time[0] }}</span>
@@ -182,6 +183,13 @@
           });
           return ;
         }
+        if(!this.form.time){
+          this.$message({
+            message: '尚未选择面试时间！',
+            type: 'warning'
+          });
+          return ;
+        }
 
         // 思路：通过 FormData 手动添加元素并上传
         var form = new FormData();
@@ -201,7 +209,7 @@
         }
         form.append("resume", file.files[0]);
 
-        const req = new Request('http://localhost:3000/join', {
+        const req = new Request('http://115.159.152.163:3000/join', {
           method: "POST",
           body: form,
         });
@@ -212,7 +220,7 @@
         // ajax
         fetch(req)
           .then(res => {
-            this.loading = false
+            this.loading = false;
             return res.json();
           })
           .then(data => {
@@ -231,12 +239,14 @@
             }
           })
           .catch(err => {
+            console.log(err);
+            this.loading = false;
             this.$message({
-              message: err,
+              message: 'Error: ' + err,
               type: 'error',
               duration: 5000,
             });
-          })
+          });
         this.resetForm();
       },
 
@@ -246,6 +256,7 @@
     },
 
     mounted() {
+      // 是否禁用表单
       if(!this.ifStart){
         const inputArr = document.getElementsByTagName('input');
         const textArr = document.getElementsByTagName('textarea');
@@ -304,6 +315,10 @@
     display: block;
     font: 400 23px/36px "PingFang SC";
     color: #4d4d4d;
+  }
+
+  input{
+    cursor: pointer;
   }
 
   #file-name{

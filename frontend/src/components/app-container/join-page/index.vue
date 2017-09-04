@@ -23,7 +23,24 @@
 
     },
     mounted() {
-      this.$notify.info({...this.$store.state.join.joinInfo});
+      // 纳新信息提示
+      const h = this.$createElement;
+      const timeline = this.$store.state.join.timeline;
+      const infoNode = [];
+      timeline.forEach((item) => {
+        infoNode.push(h('h', null, `${item.thing}：`));
+        infoNode.push(h('h', {style: 'color: rgb(109, 126, 150); font-weight: 300'}, item.time));
+        infoNode.push(h('br', null, null));
+      });
+
+      this.$notify.info({
+        title: '纳新时间轴',
+        message: h('p', null, infoNode),
+        duration: 0,
+        showClose: true,
+      });
+
+      this.$notify.info({...this.$store.state.join.tip});
     },
   };
 </script>

@@ -4,7 +4,6 @@
 ## 一、todolist
 - 动画与过渡
 - 浏览器兼容
-- 首屏黑板 LOGO [Example](http://taobaofed.org/about/)
 
 # 技术栈
 ## 一、前端

@@ -16,7 +16,7 @@ const state = {
   contact: '浙ICP备17028775号-2 联系我们',
   usInfo: {
     title: '浙大职协SCDA',
-    message: '协会邮箱：xxx@zju.edu.cn（有合作意向可戳）\n纳新负责人邮箱：xxx@zju.edu.cn（对纳新有疑问可戳）\n网站联系邮箱：crcrcry@zju.edu.cn（报名过程中网站出现问题可戳）\n微信公众号：scda_zju ',
+    message: '协会邮箱：khalillee@zju.edu.cn（有合作意向可戳）\n纳新负责人邮箱：15757115184@163.com（对纳新有疑问可戳）\n网站联系邮箱：crcrcry@zju.edu.cn（报名过程中网站出现问题可戳）\n微信公众号：scda_zju ',
     duration: 7000, // 提示的持续事件，单位ms
   },
 };
