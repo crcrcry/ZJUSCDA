@@ -2,8 +2,7 @@
 - 浙大职协 SCDA 官方网站 2.0
 
 ## 一、todolist
-- 动画与过渡
-- 浏览器兼容
+- 尚未正式部署
 
 # 技术栈
 ## 一、前端
@@ -23,6 +22,7 @@
 		- FormData API
 		- multipart/form-data
 		- loading
+		- 防止频繁提交，2分钟一次
 	- 后端：
 		- multer
 		- moment

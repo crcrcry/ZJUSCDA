@@ -93,18 +93,29 @@
     padding: 0vh 12.7% 0vh 13%;
 
     color: #4D4D4D;
-    font: 400 16px/24px "PingFang SC";
+    font: 400 18px/26px "PingFang SC";
     text-indent: 2em;
   }
 
-  @media (max-width: 1300px){
+  @media (max-width: 1550px) and (min-width: 1371px) {
+    #title{
+      padding: 4vh 13% 4vh 13%;
+      font: 600 34px/50px "PingFang SC";
+    }
+
+    .description{
+      padding: 0vh 12.7% 0vh 13%;
+      font: 400 15px/23px "PingFang SC";
+    }
+  }
+  @media (max-width: 1370px){
     #title{
       padding: 3.7vh 12% 3.2vh 13%;
       font: 600 27px/42px "PingFang SC";
     }
 
     .description{
-      font: 400 14px/20px "PingFang SC";
+      font: 400 13px/19px "PingFang SC";
     }
   }
 </style>

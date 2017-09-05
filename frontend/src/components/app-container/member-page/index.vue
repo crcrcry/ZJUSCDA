@@ -2,7 +2,7 @@
   <div id="container">
     <el-row id="content">
       <el-col :span="2">
-        <div class="arrowDiv">
+        <div class="arrow-div">
           <i class="el-icon-arrow-left" @click="changeOffset(-1)"></i>
         </div>
       </el-col>
@@ -12,10 +12,8 @@
         </div>
       </el-col>
       <el-col :span="2">
-        <div class="arrowDiv">
-          <div class="arrowRound">
-            <i class="el-icon-arrow-right" @click="changeOffset(1)"></i>
-          </div>
+        <div class="arrow-div">
+          <i class="el-icon-arrow-right" @click="changeOffset(1)"></i>
         </div>
       </el-col>
     </el-row>
@@ -94,7 +92,7 @@
     cursor: pointer;
   }
 
-  .arrowDiv{
+  .arrow-div{
     height: 10vh;
     padding-top: 32vh;
 

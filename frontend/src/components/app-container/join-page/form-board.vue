@@ -140,6 +140,7 @@
           fileName: '尚未选择简历文件',
         },
         loading: false,
+        submitForbidden: false,
       };
     },
     computed: {
@@ -176,6 +177,18 @@
       },
 
       submitForm() {
+        // setTimeout 会改变 this 指向，防止重复构造该函数。
+        window.submitRecover = (!window.submitRecover) ? () => {
+          this.submitForbidden = false;
+          this.$message({
+            message: '状态恢复，可重新提交表单！',
+            type: 'success',
+            showClose: true,
+            duration: 0,
+          });
+        } : window.submitRecover;
+
+        // 判断一些数据是否齐全
         if(!this.form.ifFile){
           this.$message({
             message: '尚未选择要上传的个人简历！',
@@ -187,6 +200,16 @@
           this.$message({
             message: '尚未选择面试时间！',
             type: 'warning'
+          });
+          return ;
+        }
+
+        // 判断是否频繁提交
+        if(this.submitForbidden){
+          this.$message({
+            message: '禁止过于频繁的提交表单，请2分钟后在进行尝试！',
+            type: 'warning',
+            duration: 5500,
           });
           return ;
         }
@@ -203,7 +226,8 @@
         }
 
         const file = document.getElementById('resume');
-        const maxFileSize = 1024 * 1024 * 10;  // 10 mb 文件够用了吧
+        console.log('文件大小：'+file.files[0].size/(1000*1000)+' MB');
+        const maxFileSize = 1000 * 1000 * 10;  // 10 mb 文件够用了吧
         if(file.files[0].size > maxFileSize){
           this.$message({
             message: '简历文件大小不应超过 10 MB！',
@@ -229,11 +253,17 @@
           })
           .then(data => {
             if(data.code === 1){
+              // this.resetForm();  别清除 免得填错用户体验不好
               this.$message({
                 message: data.msg,
                 type: 'success',
                 duration: 5000,
               });
+
+              // 提交成功，防止高频点击，两分钟一次
+              this.submitForbidden = true;
+              // submitRecover();
+              setTimeout("submitRecover()", 120000);  
             }else{
               this.$message({
                 message: data.msg,
@@ -251,7 +281,6 @@
               duration: 5000,
             });
           });
-        this.resetForm();
       },
 
       openFullScreen() {
