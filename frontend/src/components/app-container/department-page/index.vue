@@ -8,7 +8,9 @@
       </el-col>
       <el-col :span="20">
         <div id="main">
-          <router-view></router-view>
+          <transition name="fade-quick" mode="out-in">
+            <router-view></router-view>
+          </transition>
         </div>
       </el-col>
       <el-col :span="2">

@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div id="container" @click="closeBlackboard" v-show="ifShowBlackboard">
+    <div id="container" @click="closeBlackboard" v-if="ifShowBlackboard">
       <el-row>
         <el-col :span="13">
           <el-row id="title">

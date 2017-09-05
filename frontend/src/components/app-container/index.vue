@@ -1,10 +1,14 @@
 <template>
   <div id="container">
-    <router-view></router-view>
+    <transition name="fade" mode="out-in">
+      <router-view></router-view>
+    </transition>
   </div>
 </template>
 
 <script>
+  import '../../animation.css';
+
   export default {
     name: 'app-container',
   };

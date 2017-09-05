@@ -63,7 +63,7 @@
 
   #img-column{
     margin-top: -30px;
-    transition: margin-top 10s linear;
+    transition: margin-top 17s linear;
   }
   #img-column:hover{
     margin-top: -200vh;

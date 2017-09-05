@@ -14,12 +14,18 @@
           </div>
 
           <div id="cards-area">
-            <div v-for="(item, index) in outerActivity" key="item.name" class="card" :id="item.id" v-show="ifOuterActivity">
-              <outer-activity :name="item.name" :state="item.state" :background="item.cardImgUrl"></outer-activity>
-            </div>
-            <div v-show="!ifOuterActivity">
-              <inner-activity></inner-activity>
-            </div>
+            <transition name="fade-quick">
+              <div v-show="ifOuterActivity">
+                <div v-for="(item, index) in outerActivity" key="item.name" class="card" :id="item.id">
+                  <outer-activity :name="item.name" :state="item.state" :background="item.cardImgUrl"></outer-activity>
+                </div>
+              </div>
+            </transition>
+            <transition name="fade-quick">
+              <div v-show="!ifOuterActivity">
+                  <inner-activity></inner-activity>
+              </div>
+            </transition>
           </div>
         </el-row>
       </el-col>
