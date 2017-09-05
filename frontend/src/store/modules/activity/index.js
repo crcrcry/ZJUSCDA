@@ -1,5 +1,7 @@
 
-const imagesDir = 'http://static.zjuscda.club/images/activity/'
+const imagesDir = 'http://static.zjuscda.club/images/activity/';
+const devImagesPath = '../../../static/images/activity/';
+
 
 const state = {
   open: 0,
@@ -64,63 +66,63 @@ const state = {
   innerActivity: [
     {
       title: '2015 周年庆',
-      image: imagesDir + '内部活动/2015周年庆.jpeg',
+      image: devImagesPath + '内部活动/2015周年庆.jpeg',
     },
     {
       title: '2016 周年庆',
-      image: imagesDir + '内部活动/2016周年庆.jpg',
+      image: devImagesPath + '内部活动/2016周年庆.jpg',
     },
     {
       title: '2016 mentor 之夜',
-      image: imagesDir + '内部活动/2016mentor之夜.jpeg',
+      image: devImagesPath + '内部活动/2016mentor之夜.jpeg',
     },
     {
       title: '2017 mentor 之夜',
-      image: imagesDir + '内部活动/2017mentor之夜.jpeg',
+      image: devImagesPath + '内部活动/2017mentor之夜.jpeg',
     },
     {
       title: '2017 内训-管培颁奖',
-      image: imagesDir + '内部活动/内训-管培颁奖.jpeg',
+      image: devImagesPath + '内部活动/内训-管培颁奖.jpeg',
     },
     {
       title: '2017 内训-管培微电影',
-      image: imagesDir + '内部活动/内训-管培微电影.jpeg',
+      image: devImagesPath + '内部活动/内训-管培微电影.jpeg',
     },
     {
       title: '2017 内训-模拟面试',
-      image: imagesDir + '内部活动/内训-模拟面试.jpg',
+      image: devImagesPath + '内部活动/内训-模拟面试.jpg',
     },
     {
       title: '2016 内训-实习分享',
-      image: imagesDir + '内部活动/内训-实习分享.jpg',
+      image: devImagesPath + '内部活动/内训-实习分享.jpg',
     },
     {
       title: '2016 纪龙山探险',
-      image: imagesDir + '内部活动/2016纪龙山探险.jpeg',
+      image: devImagesPath + '内部活动/2016纪龙山探险.jpeg',
     },
     {
       title: '2017 舟山素拓',
-      image: imagesDir + '内部活动/2017舟山素拓.jpeg',
+      image: devImagesPath + '内部活动/2017舟山素拓.jpeg',
     },
     {
       title: '2016 跨年别墅趴',
-      image: imagesDir + '内部活动/跨年别墅趴.jpeg',
+      image: devImagesPath + '内部活动/跨年别墅趴.jpeg',
     },
     {
       title: '2017 撕名牌',
-      image: imagesDir + '内部活动/撕名牌.jpeg',
+      image: devImagesPath + '内部活动/撕名牌.jpeg',
     },
     {
       title: '2016 万圣节化妆舞会',
-      image: imagesDir + '内部活动/万圣节化妆舞会.jpg',
+      image: devImagesPath + '内部活动/万圣节化妆舞会.jpg',
     },
     {
       title: '2017 舞会',
-      image: imagesDir + '内部活动/舞会.jpeg',
+      image: devImagesPath + '内部活动/舞会.jpeg',
     },
     {
       title: '2017 SCDA 的碧海蓝天',
-      image: imagesDir + '内部活动/SCDA的碧海蓝天.jpeg',
+      image: devImagesPath + '内部活动/SCDA的碧海蓝天.jpeg',
     },
   ],
 };

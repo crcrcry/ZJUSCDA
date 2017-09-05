@@ -83,8 +83,8 @@
   }
 
   .img{
-    width: 30vw;
-    height: 30vh;
+    width: 28vw;
+    height: 33vh;
     margin-bottom: 5vh;
   }
 

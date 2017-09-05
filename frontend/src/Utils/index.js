@@ -12,11 +12,11 @@ function getNavName() {
 
 function getDepartmentName() {
   return [
-    { name: '校', id: 'campusRecruitment', brief: 'cr' },
-    { name: '项', id: 'projectManagement', brief: 'pm' },
-    { name: '理', id: 'council', brief: 'council' },
-    { name: '人', id: 'humanResource', brief: 'hr' },
-    { name: '公', id: 'publicRelation', brief: 'pr' },
+    { name: '校招', id: 'campusRecruitment', brief: 'cr' },
+    { name: '项管', id: 'projectManagement', brief: 'pm' },
+    { name: '理事', id: 'council', brief: 'council' },
+    { name: '人力', id: 'humanResource', brief: 'hr' },
+    { name: '公关', id: 'publicRelation', brief: 'pr' },
   ];
 }
 

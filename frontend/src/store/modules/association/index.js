@@ -1,4 +1,6 @@
-const imagesDir = 'http://static.zjuscda.club/images/association/'
+const imagesDir = 'http://static.zjuscda.club/images/association/';
+const devImagesPath = '../../../static/images/association/';
+
 
 const state = {
   title: '浙江大学<br>学生就业与职业发展协会',
@@ -12,10 +14,10 @@ const state = {
 
   // 三张图，按照上中下排列
   imgUrl: [
-    imagesDir + '1.jpg',
-    imagesDir + '2.jpg',
-    imagesDir + '3.jpg',
-    imagesDir + '4.jpg',
+    devImagesPath + '1.jpg',
+    devImagesPath + '2.jpg',
+    devImagesPath + '3.jpg',
+    devImagesPath + '4.jpg',
   ],
 };
 

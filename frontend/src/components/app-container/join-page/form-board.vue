@@ -191,6 +191,10 @@
           return ;
         }
 
+        // 去除 q1 q2 中的回车，防止 excel bug
+        this.form.q1 = this.form.q1.replace(/\n/g, ' ');
+        this.form.q2 = this.form.q2.replace(/\n/g, ' ');
+
         // 思路：通过 FormData 手动添加元素并上传
         var form = new FormData();
 

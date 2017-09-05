@@ -113,7 +113,7 @@
     height: 6.5vh;
     border-radius: 3.25vh;
     text-align: center;
-    font: 400 30px/6.5vh "PingFang SC";
+    font: 400 20px/6.5vh "PingFang SC";
     background-color: #26465C;
     cursor: pointer;
     color: #fff;
@@ -125,7 +125,7 @@
     }
 
     .round{
-      font-size: 24px;
+      font-size: 18px;
     }
   }
 </style>
