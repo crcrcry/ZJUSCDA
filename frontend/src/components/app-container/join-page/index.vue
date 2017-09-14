@@ -36,7 +36,7 @@
       this.$notify.info({
         title: '纳新时间轴',
         message: h('p', null, infoNode),
-        duration: 0,
+        duration: 12000,
         showClose: true,
       });
 

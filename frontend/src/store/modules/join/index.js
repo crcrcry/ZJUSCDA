@@ -4,7 +4,7 @@ const state = {
   tip: {
     title: '纳新小提示',
     message: '若想修改报名信息，重新填写表单并选择简历，填好后提交即可；若只想修改简历，直接选择文件提交即可。',
-    duration: 0, // 提示的持续事件，单位ms
+    duration: 13000, // 提示的持续事件，单位ms
     offset: 210, // 偏移量
   },
   timeline: [
@@ -22,15 +22,15 @@ const state = {
     },
     {
       thing: '宣讲会',
-      time: '9.24 XXX'
+      time: '9.24 地点暂时未定'
     },
     {
       thing: '报名截止',
-      time: '9.26 晚'
+      time: '9.26 中午12：00'
     },
     {
       thing: '面试',
-      time: '9.27-9.29'
+      time: '9.27-9.29 永谦小剧场'
     },
   ],
   formInfo: {

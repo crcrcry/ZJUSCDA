@@ -21,6 +21,7 @@
     width: 105px;
     height: 48px;
     text-align: center;
+    padding-left: 0px;
 
     color: #4D4D4D;
     font: bold 18px/48px "PingFang SC";
