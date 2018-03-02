@@ -11,7 +11,9 @@ var storage = multer.diskStorage({
     cb(null, 'static/resumes')
   },
   filename: function (req, file, cb) {
-    cb(null, `${moment().format('YYYYMMDD_HH.mm.ss')}_${file.originalname}`);
+    const filetype = file.originalname.substring(file.originalname.lastIndexOf('.'))
+    // 同名文件会自动替换
+    cb(null, `${req.body.name}_${req.body.first}_${req.body.second}${filetype}`);
   }
 });
 
@@ -44,9 +46,9 @@ router.post('/join',  upload.any(), function(req, res, next) {
 
     const filePromise = new Promise((resolve, reject) => {
       const form = req.body;
-      const csvStrGBK = `\n${form.name},${form.major},${form.grade},${form.id},${form.longTel},${form.shortTel},${form.campus},${form.email},${form.referee},${form.first},${form.second},${form.ifAdjust},${form.q1},${form.q2},${form.time},${form.fileName}`;
+      const csvStrGBK = `\n${form.name},${form.major},${form.grade},${form.id},${form.tel},${form.sex},${form.campus},${form.email},${form.referee},${form.first},${form.second},${form.ifAdjust},${form.q1},${form.q2},${form.time},${form.fileName}`;
       const csvStrUTF = iconv.encode(csvStrGBK, 'gbk');
-      fs.appendFile('static/people_list.csv', csvStrUTF, function(err){
+      fs.appendFile('static/list.csv', csvStrUTF, function(err){
         if(err)
           reject({
             code: 0,

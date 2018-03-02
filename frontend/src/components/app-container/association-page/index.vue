@@ -44,7 +44,8 @@
 
 <style scoped>
   #container{
-    margin-left: 3%;
+    position: absolute;
+    left: 3%;
     width: 94%;
     height: 100%;
 
@@ -52,32 +53,33 @@
   }
 
   #left-container{
-    float: left;
-    margin-left: 3%;
+    position: absolute;
+    left: 3%;
     width: 61%;
     height: 100%;
 
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
     background-color: rgba(38, 70, 92, 0.75);
   }
 
   #img-column{
     margin-top: -30px;
-    transition: margin-top 17s linear;
+    /* transition: margin-top 17s linear; */
   }
-  #img-column:hover{
+  /* #img-column:hover{
     margin-top: -200vh;
-  }
-
+  } */
   .img{
-    height: 70vh;
     width: 91.3%;
+    padding-top: 68.5%; 
     margin-left: 4.3%;
     margin-top: 30px;
   }
 
   #right-container{
-    float: left;
+    position: absolute;
+    left: 64%;
     width: 35%;
     height: 100%;
     overflow: hidden;

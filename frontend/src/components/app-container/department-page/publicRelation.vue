@@ -9,17 +9,18 @@
 
       <el-col :span="12" id="title">
         <el-row>
-          <el-carousel :interval="5000" arrow="hover" indicatorPosition="none" height="41vh">
-            <el-carousel-item v-for="item in image" :key="item">
-              <img :src="item" style="width: 100%; height: 100%;" />
+          <!-- 该高度相对的是 container -->
+          <el-carousel :interval="5000" arrow="hover" indicatorPosition="none" height="68.46%">
+            <el-carousel-item v-for="item in image" :key="item" :style="{ background: `url(${item})` , backgroundSize: '100% 100%' }">
+              <!-- <div :style="{ width: '100%', paddingTop: '75%', background: `url(${item})`,  }" ></div> -->
             </el-carousel-item>
           </el-carousel>
         </el-row>
 
         <el-row>
           <div>
-            <el-row id="name">公共关系中心</el-row>
-            <el-row id="ename">Public Relation Center</el-row>
+            <el-row id="name">媒体运营中心</el-row>
+            <el-row id="ename">Media Operation Center</el-row>
           </div>
         </el-row>
       </el-col>
@@ -71,13 +72,13 @@
 
   .paragraph{
     padding: 2.3vh 0% 0% 3%;
-    font: 300 24px/34px "PingFang SC";
+    font: 300 22px/34px "PingFang SC";
     text-indent: 2em;
   }
 
   .el-carousel {
-    margin-left: 2.6vw;
-    margin-top: 1.5vh;
+    margin: 2.7% 0 0 4.3%;
+    width: 96%;
   }
 
   .el-carousel__item {
@@ -97,7 +98,7 @@
     }
 
     .paragraph{
-      font: 300 18px/24px "PingFang SC";
+      font: 300 18px/27px "PingFang SC";
       text-indent: 2em;
     }
   }
@@ -115,7 +116,7 @@
     }
 
     .paragraph{
-      font: 300 24px/32px "PingFang SC";
+      font: 300 22px/32px "PingFang SC";
       text-indent: 2em;
     }
   }

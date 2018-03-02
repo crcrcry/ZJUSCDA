@@ -43,10 +43,10 @@
               <hr>
             </el-row>
             <el-row class="form-item">
-              <span class="form-word">长号: </span>
-              <input type="text" v-model="form.longTel" style="width: 7.4vw">
-              <span class="form-word">&nbsp;短号: </span>
-              <input type="text" v-model="form.shortTel" style="width: 4.5vw">
+              <span class="form-word">电话: </span>
+              <input type="text" v-model="form.tel" style="width: 7.4vw">
+              <span class="form-word">&nbsp;性别: </span>
+              <input type="text" v-model="form.sex" style="width: 4.5vw">
               <hr>
             </el-row>
             <el-row class="form-item">
@@ -56,12 +56,12 @@
             </el-row>
             <el-row class="form-item">
               <span class="form-word">第一志愿: </span>
-              <input type="text" v-model="form.first" style="width: 14vw">
+              <input type="text" v-model="form.first" @change="dept(1)" style="width: 14vw">
               <hr>
             </el-row>
             <el-row class="form-item">
               <span class="form-word">第二志愿: </span>
-              <input type="text" v-model="form.second" style="width: 14vw">
+              <input type="text" v-model="form.second" @change="dept(2)" style="width: 14vw">
               <hr>
             </el-row>
           </el-col>
@@ -85,15 +85,15 @@
             <el-row id="time-pick">
               <el-col :span="7">
                 <span class="time-item">{{ formInfo.time[0] }}</span>
+                <span class="time-item"></span>
+              </el-col>
+              <el-col :span="7" :offset="1">
                 <span class="time-item">{{ formInfo.time[1] }}</span>
+                <span class="time-item"></span>
               </el-col>
               <el-col :span="7" :offset="1">
                 <span class="time-item">{{ formInfo.time[2] }}</span>
-                <span class="time-item">{{ formInfo.time[3] }}</span>
-              </el-col>
-              <el-col :span="7" :offset="1">
-                <span class="time-item">{{ formInfo.time[4] }}</span>
-                <span class="time-item">{{ formInfo.time[5] }}</span>
+                <span class="time-item"></span>
               </el-col>
             </el-row>
           </el-row>
@@ -107,7 +107,7 @@
           </el-col>
         </el-row>
         <el-row class="form-item">
-          <el-col :span="5" :offset="12" class="button"><div @click="resetForm">重置</div></el-col>
+          <el-col :span="5" :offset="12" class="button"><div @click="saveForm">保存</div></el-col>
           <el-col :span="5" :offset="2" class="button"><div @click="submitForm" v-loading.fullscreen.lock="loading">提交</div></el-col>
         </el-row>
       </el-col>
@@ -125,8 +125,8 @@
           major: '',
           grade: '',
           id: '',
-          longTel: '',
-          shortTel: '',
+          tel: '',
+          sex: '',
           campus: '',
           email: '',
           referee: '',
@@ -155,6 +155,30 @@
       }
     },
     methods: {
+      dept(order) {
+        if (order == 1) {
+          if (this.form.first.includes('媒')) {
+            this.form.first = '媒体运营中心'
+          } else if (this.form.first.includes('人')) {
+            this.form.first = '人力资源中心'
+          } else if  (this.form.first.includes('校')) {
+            this.form.first = '校园招聘中心'
+          } else if  (this.form.first.includes('项')) {
+            this.form.first = '项目管理中心'
+          } 
+        } else {
+          if (this.form.second.includes('媒')) {
+            this.form.second = '媒体运营中心'
+          } else if (this.form.second.includes('人')) {
+            this.form.second = '人力资源中心'
+          } else if  (this.form.second.includes('校')) {
+            this.form.second = '校园招聘中心'
+          } else if  (this.form.second.includes('项')) {
+            this.form.second = '项目管理中心'
+          } 
+        }
+      },
+
       changeFile(event) {
         const nowFileName = event.target.value;
         if (nowFileName === '') {
@@ -176,17 +200,54 @@
         }
       },
 
-      submitForm() {
-        // setTimeout 会改变 this 指向，防止重复构造该函数。
-        window.submitRecover = (!window.submitRecover) ? () => {
-          this.submitForbidden = false;
+      saveForm() {
+        if (window.localStorage) {
+          for (const attrName in this.form) {
+            if (attrName != 'ifFile' && attrName != 'fileName') {
+              window.localStorage.setItem(attrName, this.form[attrName])
+            }
+          }
           this.$message({
-            message: '状态恢复，可重新提交表单！',
+            message: '数据存储成功，下次想在本机上修改表单时，不用重新全部填一遍啦！',
             type: 'success',
             showClose: true,
-            duration: 0,
+            duration: 6000,
           });
-        } : window.submitRecover;
+        } else {
+          this.$message({
+            message: '非常抱歉，您的浏览器版本过低，不支持本地存储功能。请一次填写完毕并提交。',
+            type: 'warning',
+            showClose: true,
+            duration: 8000,
+          });
+        }
+      },
+
+      loadForm() {
+        for (const attrName in this.form) {
+          if (attrName != 'ifFile' && attrName != 'fileName') {
+            this.form[attrName] = window.localStorage.getItem(attrName)
+          }
+        }
+        this.$message({
+            message: '本机数据加载成功！',
+            type: 'success',
+            showClose: true,
+            duration: 1500,
+          });
+      },
+
+      submitForm() {
+        // setTimeout 会改变 this 指向，防止重复构造该函数。
+        // window.submitRecover = (!window.submitRecover) ? () => {
+        //   this.submitForbidden = false;
+        //   this.$message({
+        //     message: '状态恢复，可重新提交表单！',
+        //     type: 'success',
+        //     showClose: true,
+        //     duration: 0,
+        //   });
+        // } : window.submitRecover;
 
         // 判断一些数据是否齐全
         if(!this.form.ifFile){
@@ -198,21 +259,21 @@
         }
         if(!this.form.time){
           this.$message({
-            message: '尚未选择面试时间！',
+            message: '尚未填写面试时间！',
             type: 'warning'
           });
           return ;
         }
 
         // 判断是否频繁提交
-        if(this.submitForbidden){
-          this.$message({
-            message: '禁止过于频繁的提交表单，请2分钟后在进行尝试！',
-            type: 'warning',
-            duration: 5500,
-          });
-          return ;
-        }
+        // if(this.submitForbidden){
+        //   this.$message({
+        //     message: '禁止过于频繁的提交表单，请 30 秒后在进行尝试！',
+        //     type: 'warning',
+        //     duration: 5500,
+        //   });
+        //   return ;
+        // }
 
         // 去除 q1 q2 中的回车，防止 excel bug
         this.form.q1 = this.form.q1.replace(/\n/g, ' ');
@@ -237,7 +298,7 @@
         }
         form.append("resume", file.files[0]);
 
-        const req = new Request('http://115.159.152.163:3000/join', {
+        const req = new Request('http://115.159.152.163:3000/join'/*'http://localhost:3000/join'*/, {
           method: "POST",
           body: form,
         });
@@ -259,11 +320,10 @@
                 type: 'success',
                 duration: 5000,
               });
-
               // 提交成功，防止高频点击，两分钟一次
-              this.submitForbidden = true;
+              // this.submitForbidden = true;
               // submitRecover();
-              setTimeout("submitRecover()", 120000);  
+              // setTimeout("submitRecover()", 30000);  
             }else{
               this.$message({
                 message: data.msg,
@@ -300,6 +360,9 @@
           item.disabled = 'disabled';
         }
       }
+
+      // 加载数据
+      this.loadForm()
     },
   };
 </script>

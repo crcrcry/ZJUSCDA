@@ -80,17 +80,18 @@
 
 <style scoped>
   #container{
+    overflow: hidden;
     width: 100%;
     height: 100%;
   }
 
   #content{
-    padding-top: 7.2vh;
+    padding-top: 3.5%;
   }
 
   #main{
     background-color: rgba(255,255,255,0.8);
-    height: 61.5vh;
+    height: 70%;
     padding: 2.5vh 2.5%;
   }
 
@@ -109,7 +110,7 @@
   }
 
   #nav{
-    padding-top: 4vh;
+    padding-top: 1.5%;
     padding-left: 14.5%;
   }
 

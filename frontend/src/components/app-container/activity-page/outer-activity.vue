@@ -48,34 +48,34 @@
 
 <style scoped>
   #container{
-    width: 29.33vw;
-    height: 27.5vh;
-    margin: 2vh 1.7vw;
+    width: 100%;
+    height: 100%;
     position: absolute;
   }
 
   #info{
-    padding: 1vh 0.6vw;
-    width: 14vw;
-    height: 25.5vh;
+    position: absolute;
+    width: 55%;
+    height: 100%;
     background-color: rgba(216, 216, 216, 0.9);
     cursor: pointer;
   }
 
   #name{
+    padding: 5% 0 0 5%;
     color: #26465C;
-    font: 100 50px/60px "PingFang SC";
+    font: 100 42px/60px "PingFang SC";
   }
 
   .button{
-    width: 6.64vw;
-    height: 4.5vh;
+    width: 44%;
+    height: 4.8vh;
     border-radius: 24px;
     position: absolute;
-    left: 6.7vw;
-    top: 21vh;
+    left: 48%;
+    top: 75%;
 
-    font: 100 22px/4.5vh "PingFang SC";
+    font: 100 24px/4.8vh "PingFang SC";
     border: 1px solid #26465C;
 
     text-align: center;
@@ -98,7 +98,7 @@
     .button{
       border-radius: 20px;
 
-      font: 100 18px/4.5vh "PingFang SC";
+      font: 100 20px/4.8vh "PingFang SC";
       border: 1px solid #26465C;
     }
   }

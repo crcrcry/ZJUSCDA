@@ -16,7 +16,7 @@ function getDepartmentName() {
     { name: '项管', id: 'projectManagement', brief: 'pm' },
     { name: '理事', id: 'council', brief: 'council' },
     { name: '人力', id: 'humanResource', brief: 'hr' },
-    { name: '公关', id: 'publicRelation', brief: 'pr' },
+    { name: '媒体', id: 'publicRelation', brief: 'pr' },
   ];
 }
 

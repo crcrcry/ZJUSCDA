@@ -1,5 +1,5 @@
-const imagesDir = 'http://static.zjuscda.club/images/association/';
-const devImagesPath = '../../../static/images/association/';
+// const imagesPath = 'http://static.zjuscda.club/images/association/';
+const imagesPath = '/static/images/' //'../../../static/images/';
 
 
 const state = {
@@ -14,10 +14,11 @@ const state = {
 
   // 三张图，按照上中下排列
   imgUrl: [
-    devImagesPath + '1.jpg',
-    devImagesPath + '2.jpg',
-    devImagesPath + '3.jpg',
-    devImagesPath + '4.jpg',
+    imagesPath + 'council/index.jpg',
+    imagesPath + 'pm/index.jpg',
+    imagesPath + 'hr/index.jpg',
+    imagesPath + 'campus/index.jpg',
+    imagesPath + 'media/index.jpg',
   ],
 };
 

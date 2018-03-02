@@ -31,14 +31,14 @@
   }
 
   #left-container{
-    width: 49%;
-    height: 100%;
     float: left;
+    width: 30%;
+    height: 100%;
   }
 
   #right-container{
-    width: 49.8%;
-    height: 100%;
     float: left;
+    width: 70%;
+    height: 100%;
   }
 </style>

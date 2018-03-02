@@ -6,7 +6,7 @@
           <el-row class="image">
             <div :style="imgStyle[index]">
               <div @mouseenter="showText(index)" style="width: 36vh; height: 54vh">
-                <div v-show="item.isTextShow" class="text"@mouseout="hideText(index)" v-html="item.text">
+                <div v-show="item.isTextShow" class="text" @mouseout="hideText(index)" v-html="item.text">
                 </div>
               </div>
             </div>

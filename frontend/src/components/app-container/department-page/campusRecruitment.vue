@@ -9,13 +9,13 @@
           </div>
         </el-row>
         <el-row>
-          <el-carousel :interval="5000" arrow="hover" indicatorPosition="none" height="41vh">
-            <el-carousel-item v-for="item in image" :key="item">
-              <img :src="item" style="width: 100%; height: 100%;" />
+          <!-- 该高度相对的是 container -->
+          <el-carousel :interval="5000" arrow="hover" indicatorPosition="none" height="68.46%">
+            <el-carousel-item v-for="item in image" :key="item" :style="{ background: `url(${item})` , backgroundSize: '100% 100%' }">
+              <!-- <div :style="{ width: '100%', paddingTop: '75%', background: `url(${item})`,  }" ></div> -->
             </el-carousel-item>
           </el-carousel>
         </el-row>
-
       </el-col>
 
       <el-col :span="12">
@@ -52,7 +52,6 @@
     height: 100%;
   }
 
-
   #name{
     padding-top: 2vh;
     font: 500 72px/80px "PingFang SC";
@@ -70,13 +69,13 @@
 
   .paragraph{
     padding: 2.3vh 0% 0% 3%;
-    font: 300 24px/34px "PingFang SC";
+    font: 300 21px/34px "PingFang SC";
     text-indent: 2em;
   }
 
   .el-carousel {
-    margin-left: 2.6vw;
-    margin-top: 1.5vh;
+    margin: 2.7% 0 0 4.3%;
+    width: 96%;
   }
 
   .el-carousel__item {
@@ -96,7 +95,7 @@
     }
 
     .paragraph{
-      font: 300 18px/24px "PingFang SC";
+      font: 300 17px/25px "PingFang SC";
       text-indent: 2em;
     }
   }
@@ -114,7 +113,7 @@
     }
 
     .paragraph{
-      font: 300 23px/30px "PingFang SC";
+      font: 300 19px/30px "PingFang SC";
       text-indent: 2em;
     }
   }
