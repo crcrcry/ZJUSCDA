@@ -20,13 +20,14 @@
 		- FormData API
 		- multipart/form-data
 		- loading
-		- 防止频繁提交，2分钟一次
+		- ....
 	- 后端：
 		- multer
 		- moment
 		- fs
 		- iconv-lite API
 		- Promise.all
+		- ....
 	- Error handler
 
 
